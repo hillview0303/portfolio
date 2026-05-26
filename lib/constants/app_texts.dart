@@ -1,98 +1,194 @@
 class AppTexts {
-  static const Map<String, Map<String, String>> _texts = {
+  static const Map<String, Map<String, dynamic>> _texts = {
     'en': {
-      // Header Section
-      'greeting': 'Hello, I\'m Yujin!',
+      'name': 'Jang Yujin',
       'jobTitle': 'Flutter Developer',
-      'headerDescription': 'I love creating beautiful UI and user experiences',
-
-      // About Section
-      'aboutTitle': 'About Me',
-      'developmentCard': 'Development',
-      'developmentDesc': 'Mobile app development\nwith Flutter',
+      'jobTitles': [
+        'Software Engineer',
+        'Flutter Developer',
+        'All-Rounder',
+        'Icon of Persistence',
+        'UX Explorer',
+      ],
+      'headerTagline':
+      'A Flutter Developer who has hands-on experience across planning, design, and development —\n'
+          'turning ideas into real products.\n\n'
+          'An All-Rounder who adapts to any project,\n'
+          'and an Icon of Persistence who sees things through to the end.\n\n'
+          'As a UX Explorer, I go beyond just building features —\n'
+          'I care about user flow, visual polish, and every little detail.',
+      'statsProjects': '6+',
+      'statsProjectsLabel': 'Projects',
+      'statsYears': '1+',
+      'statsYearsLabel': 'Years',
+      'scrollDown': 'Scroll Down',
+      'planningCard': 'Planning',
+      'planningDesc': 'Project planning and\nrequirements analysis',
       'designCard': 'Design',
-      'designDesc': 'Very interested in\nUI/UX design',
-      'learningCard': 'Learning',
-      'learningDesc': 'Love learning\nnew technologies',
-      'aboutDetailedIntro': 'I am a Flutter developer passionate about mobile app development.\n'
-          'I value user experience and create apps that consider both beautiful UI and performance.\n'
-          'I enjoy learning and applying new technologies, and I am constantly growing.',
-
-      // Skills Section
+      'designDesc': 'UI/UX design and\nprototyping with Figma',
+      'developmentCard': 'Development',
+      'developmentDesc': 'Cross-platform development\nwith Flutter',
+      'aboutTitle': 'About Me',
+      'aboutSubtitle': 'Who I Am',
+      'experienceTitle': 'Experiences',
+      'workSubtitle': 'Work',
+      'educationSubtitle': 'Education',
+      'work1Year': '2024.12 - 2025.12.01',
+      'work1Title': 'Flutter Developer',
+      'work1Organization': 'Datos',
+      'work1Description': 'Total solution planning, design, and app development for small business owners',
+      'work2Year': '2014.03 - 2023.05',
+      'work2Title': 'Inspection Team Leader',
+      'work2Organization': 'OTIS Elevator Singapore',
+      'work2Description': 'Led inspection team and managed quality control processes',
+      'work3Year': '2013.08 - 2013.12',
+      'work3Title': 'Intern',
+      'work3Organization': 'OTIS Elevator Singapore',
+      'work3Description': 'Elevator maintenance team intern',
+      'edu1Year': '2024.06 - 2024.08',
+      'edu1Title': 'Spring Boot & Flutter Advanced Course',
+      'edu1Organization': 'Green Computer Academy',
+      'edu1Description': 'Spring Boot, Flutter, and AI-powered web/app development',
+      'edu2Year': '2023.11 - 2024.06',
+      'edu2Title': 'Java & Spring Boot Full-Stack Developer Course',
+      'edu2Organization': 'Green Computer Academy',
+      'edu2Description': 'Java, Spring Boot, SQL-based full-stack development',
+      'edu3Year': '2015 - 2017',
+      'edu3Title': 'Mechatronics',
+      'edu3Organization': 'University of Wolverhampton',
+      'edu3Description': 'Transfer student',
       'skillsTitle': 'Skills & Tools',
       'developmentSkills': 'Development Skills',
       'usedTools': 'Tools Used',
-
-      // Projects Section
       'projectsTitle': 'Projects',
       'projectsSubtitle': 'Let me introduce the projects I\'ve created',
-      'shoppingAppTitle': 'Shopping Mall App',
-      'shoppingAppDesc': 'A mobile shopping mall app created with Flutter. Implemented real-time data integration with Firebase and payment system.',
-      'weatherAppTitle': 'Weather App',
-      'weatherAppDesc': 'An app that provides real-time weather information. Applied location-based services and beautiful animations.',
-      'todoAppTitle': 'Todo Management App',
-      'todoAppDesc': 'An app for efficient todo management. Implemented drag and drop, notification features, etc.',
+      'pickleTitle': 'Pickle',
+      'pickleDesc': 'All-in-one travel expense manager — from currency exchange to budget tracking and group settlement. Features OCR receipt scanning, multi-currency calculator, and spending analysis by category.',
+      'liftMonitoringTitle': 'LiftMonitoring',
+      'liftMonitoringDesc': 'Real-time elevator monitoring solution combining MQTT-based sensor data ingestion, Digital Twin animation, and lifecycle management for 24 legally-defined parts. Features role-based access (engineer/sales/customer), ML anomaly detection with Isolation Forest, and GPT-4o-mini auto-generated inspection reports.',
+      'offPeakTitle': 'offPeak',
+      'offPeakDesc': 'A personalized travel app for users who prefer quiet trips. Recommends customized travel courses using Korea Tourism Organization API and AI chatbot.',
+      'shelfTitle': 'shelf',
+      'shelfDesc': 'An ebook subscription reading service. Provides subscription payment, library management, and viewer features.',
+      'bodykeyTitle': 'bodykey',
+      'bodykeyDesc': 'A health habit management app. Provides step counting, diet management, water intake tracking, body data recording, and challenge participation features.',
+      'maemulTitle': 'Maemul Manager',
+      'maemulDesc': 'A property listing management web app built for a real estate agent via vibe coding with Claude Code. Supports registering, filtering, and managing sale/jeonse/monthly rent listings with PIN-based security and contract status tracking.',
       'viewCode': 'View Code',
       'viewDemo': 'View Demo',
-
-      // Contact Section
-      'contactTitle': 'Let\'s Work Together!',
+      'playStore': 'Play Store',
+      'appStore': 'App Store',
+      'contactTitle': 'Contact',
       'contactSubtitle': 'If you have new projects or collaboration opportunities,\nplease contact me anytime!',
       'email': 'Email',
+      'phone': 'Phone',
       'github': 'GitHub',
       'linkedin': 'LinkedIn',
       'sendEmail': 'Send Email',
       'connectSns': 'Or connect via SNS',
+      'emailCopied': 'Email copied to clipboard',
     },
-
     'ko': {
-      // Header Section
-      'greeting': '안녕하세요, 유진입니다!',
-      'jobTitle': 'Flutter 개발자',
-      'headerDescription': '아름다운 UI와 사용자 경험을 만드는 것을 좋아합니다',
-
-      // About Section
-      'aboutTitle': 'About Me',
-      'developmentCard': '개발',
-      'developmentDesc': 'Flutter로\n모바일 앱 개발',
+      'name': '장유진',
+      'jobTitle': 'Flutter Developer',
+      'jobTitles': [
+        '소프트웨어 엔지니어',
+        'Flutter 개발자',
+        '올라운더',
+        '끈기의 아이콘',
+        'UX 탐구자',
+      ],
+      'headerTagline':
+      '기획부터 디자인, 개발까지 전 과정을 직접 경험하며\n'
+          '아이디어를 제품으로 완성하는 Flutter 개발자입니다.\n\n'
+          '어떤 프로젝트든 소화하는 올라운더,\n'
+          '맡은 일은 끝까지 해내는 끈기의 아이콘.\n\n'
+          '또한 기능 구현에 그치지 않고 사용 흐름과 화면 완성도를 고민하며,\n'
+          '작은 디테일까지 놓치지 않는 UX 탐구자로서\n'
+          '사용자 중심의 앱 개발을 추구합니다.',
+      'statsProjects': '6+',
+      'statsProjectsLabel': 'Projects',
+      'statsYears': '1+',
+      'statsYearsLabel': 'Years',
+      'scrollDown': 'Scroll Down',
+      'planningCard': '기획',
+      'planningDesc': '프로젝트\n기획 및\n요구사항\n분석',
       'designCard': '디자인',
-      'designDesc': 'UI/UX 디자인에\n관심이 많아요',
-      'learningCard': '학습',
-      'learningDesc': '새로운 기술을\n배우는 것을 좋아해요',
-      'aboutDetailedIntro': '저는 모바일 앱 개발에 열정을 가진 Flutter 개발자입니다.\n'
-          '사용자 경험을 중시하며, 아름다운 UI와 성능을 모두 고려한 앱을 만들고 있습니다.\n'
-          '새로운 기술을 배우고 적용하는 것을 즐기며, 꾸준히 성장하고 있습니다.',
-
-      // Skills Section
+      'designDesc': 'UI/UX\n디자인 및\nFigma\n프로토타이핑',
+      'developmentCard': '개발',
+      'developmentDesc': 'Flutter기반\n크로스플랫폼\n개발',
+      'aboutTitle': 'About Me',
+      'aboutSubtitle': '저는 이런 사람입니다',
+      'experienceTitle': 'Experiences',
+      'workSubtitle': 'Work',
+      'educationSubtitle': 'Education',
+      'work1Year': '2024.12 - 2025.12.01',
+      'work1Title': 'Flutter 개발자',
+      'work1Organization': '다토스',
+      'work1Description': '소상공인 토탈솔루션 기획, 디자인, 앱 개발',
+      'work2Year': '2014.03 - 2023.05',
+      'work2Title': '검사팀 리더',
+      'work2Organization': 'OTIS Elevator Singapore',
+      'work2Description': '검사팀 리더로 품질 관리 프로세스 관리',
+      'work3Year': '2013.08 - 2013.12',
+      'work3Title': '인턴',
+      'work3Organization': 'OTIS Elevator Singapore',
+      'work3Description': '엘리베이터 유지보수팀 인턴',
+      'edu1Year': '2024.05 - 2024.07',
+      'edu1Title': 'Spring Boot & Flutter 실무 심화과정',
+      'edu1Organization': '그린컴퓨터아카데미',
+      'edu1Description': 'Spring Boot, Flutter, 생성형 AI 활용 웹/앱 개발',
+      'edu2Year': '2023.11 - 2024.05',
+      'edu2Title': 'Java & Spring Boot 풀스택 개발자 양성과정',
+      'edu2Organization': '그린컴퓨터아카데미',
+      'edu2Description': 'Java, Spring Boot, SQL 기반 풀스택 개발',
+      'edu3Year': '2015 - 2017',
+      'edu3Title': 'Mechatronics',
+      'edu3Organization': 'University of Wolverhampton',
+      'edu3Description': '편입',
       'skillsTitle': 'Skills & Tools',
       'developmentSkills': '개발 스킬',
       'usedTools': '사용 툴',
-
-      // Projects Section
       'projectsTitle': 'Projects',
       'projectsSubtitle': '제가 만든 프로젝트들을 소개합니다',
-      'shoppingAppTitle': '쇼핑몰 앱',
-      'shoppingAppDesc': 'Flutter로 제작한 모바일 쇼핑몰 앱입니다. Firebase를 이용한 실시간 데이터 연동과 결제 시스템을 구현했습니다.',
-      'weatherAppTitle': '날씨 앱',
-      'weatherAppDesc': '실시간 날씨 정보를 제공하는 앱입니다. 위치 기반 서비스와 아름다운 애니메이션을 적용했습니다.',
-      'todoAppTitle': '할일 관리 앱',
-      'todoAppDesc': '효율적인 할일 관리를 위한 앱입니다. 드래그 앤 드롭, 알림 기능 등을 구현했습니다.',
+      'pickleTitle': '피클',
+      'pickleDesc': '환율 조회부터 여행 예산 관리, 정산까지 한 번에. OCR 영수증 스캔, 다국가 환율 계산, 카테고리별 지출 분석 기능을 제공하는 스마트 여행 경비 관리 앱.',
+      'liftMonitoringTitle': '리프트 모니터링',
+      'liftMonitoringDesc': 'MQTT 기반 실시간 센서 데이터 수집과 Digital Twin 애니메이션을 결합한 엘리베이터 모니터링 솔루션. 엘리베이터 안전관리법 기반 24개 부품 수명 관리, 역할별 로그인(엔지니어/영업/고객), Isolation Forest ML 이상치 탐지, GPT-4o-mini 자동 점검 보고서 생성 기능을 제공합니다.',
+      'offPeakTitle': 'offPeak',
+      'offPeakDesc': '한적한 여행을 원하는 사용자를 위한 맞춤형 여행 앱. 관광공사 API와 AI 챗봇을 활용해 개인화된 여행 코스를 추천합니다.',
+      'shelfTitle': 'shelf',
+      'shelfDesc': 'ebook 구독형 열람 서비스. 구독 결제, 서재 관리, 뷰어 기능을 제공합니다.',
+      'bodykeyTitle': 'bodykey',
+      'bodykeyDesc': '건강 습관 관리 앱. 걸음수 측정, 식단 관리, 수분 섭취 체크, 바디 데이터 기록, 챌린지 참여 기능을 제공합니다.',
+      'maemulTitle': '매물관리',
+      'maemulDesc': 'Claude Code를 활용한 바이브코딩으로 만든 부동산 중개사를 위한 매물 관리 웹앱. 매매/전세/월세 매물 등록, 필터링, 계약 상태 관리 기능과 PIN 보안을 제공합니다.',
       'viewCode': '코드 보기',
       'viewDemo': '데모 보기',
-
-      // Contact Section
-      'contactTitle': 'Let\'s Work Together!',
+      'playStore': 'Play 스토어',
+      'appStore': 'App 스토어',
+      'contactTitle': 'Contact',
       'contactSubtitle': '새로운 프로젝트나 협업 기회가 있으시다면\n언제든지 연락해주세요!',
       'email': 'Email',
+      'phone': '전화번호',
       'github': 'GitHub',
       'linkedin': 'LinkedIn',
       'sendEmail': '이메일 보내기',
-      'connectSns': '또는 SNS로 연결해주세요',
+      'connectSns': '',
+      'emailCopied': '이메일이 복사되었습니다',
     },
   };
 
   static String get(String key, String langCode) {
     return _texts[langCode]?[key] ?? _texts['en']?[key] ?? key;
+  }
+
+  static List<String> getList(String key, String langCode) {
+    final value = _texts[langCode]?[key] ?? _texts['en']?[key];
+    if (value is List) {
+      return List<String>.from(value);
+    }
+    return [];
   }
 
   static String getCurrentLanguage(String systemLangCode) {

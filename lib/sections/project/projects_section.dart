@@ -19,6 +19,16 @@ class ProjectsSection extends StatelessWidget {
       'appStore': '',
     },
     {
+      'titleKey': 'liftMonitoringTitle',
+      'descriptionKey': 'liftMonitoringDesc',
+      'tech': ['Flutter', 'MQTT', 'Supabase', 'Python', 'scikit-learn', 'OpenAI'],
+      'image': 'assets/images/lift_monitoring.png',
+      'github': '',
+      'demo': 'https://www.youtube.com/shorts/_lHwi_H0_H8',
+      'playStore': '',
+      'appStore': '',
+    },
+    {
       'titleKey': 'maemulTitle',
       'descriptionKey': 'maemulDesc',
       'tech': ['Flutter', 'Riverpod', 'Supabase', 'GoRouter', 'Firebase Hosting'],
