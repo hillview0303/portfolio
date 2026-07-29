@@ -73,20 +73,20 @@ class ProjectsDesktopLayout extends StatelessWidget {
         backgroundColor: AppColors.primary,
       ));
     }
+    if (appStore.isNotEmpty) {
+      buttons.add(_buildButton(
+        url: appStore,
+        icon: Icons.apple,
+        labelKey: 'appStore',
+        backgroundColor: AppColors.textPrimary,
+      ));
+    }
     if (playStore.isNotEmpty) {
       buttons.add(_buildButton(
         url: playStore,
         icon: Icons.play_arrow_rounded,
         labelKey: 'playStore',
         backgroundColor: AppColors.primary,
-      ));
-    }
-    if (appStore.isNotEmpty) {
-      buttons.add(_buildButton(
-        url: appStore,
-        icon: Icons.apple,
-        labelKey: 'appStore',
-        backgroundColor: Colors.black,
       ));
     }
 
