@@ -68,7 +68,7 @@ class ContactDesktopLayout extends StatelessWidget {
                 context: context,
                 icon: Icons.phone,
                 label: AppTexts.get('phone', lang),
-                value: '+82 10-1234-5678',
+                value: '010-8763-4066',
                 onTap: () {},
               ),
             ),

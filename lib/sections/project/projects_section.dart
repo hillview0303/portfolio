@@ -16,7 +16,7 @@ class ProjectsSection extends StatelessWidget {
       'github': '',
       'demo': '',
       'playStore': 'https://play.google.com/store/apps/details?id=com.nestplanet.pickle',
-      'appStore': '',
+      'appStore': 'https://apps.apple.com/app/id6776942520',
     },
     {
       'titleKey': 'liftMonitoringTitle',
