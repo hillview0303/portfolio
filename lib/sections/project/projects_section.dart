@@ -9,6 +9,31 @@ class ProjectsSection extends StatelessWidget {
 
   static const List<Map<String, dynamic>> projects = [
     {
+      'titleKey': 'allyeodoTitle',
+      'descriptionKey': 'allyeodoDesc',
+      'tech': ['Flutter', 'Riverpod', 'Supabase', 'Drift', 'RevenueCat', 'AdMob'],
+      'image': 'assets/images/allyeodo.png',
+      'github': '',
+      'demo': '',
+      'storeGroups': [
+        {
+          'labelKey': 'allyeodoHangugsa',
+          'playStore': 'https://play.google.com/store/apps/details?id=com.nestplanet.allyeodo.hangugsa',
+          'appStore': 'https://apps.apple.com/app/id6804640526',
+        },
+        {
+          'labelKey': 'allyeodoDriver',
+          'playStore': 'https://play.google.com/store/apps/details?id=com.nestplanet.allyeodo.driver',
+          'appStore': 'https://apps.apple.com/app/id6810533218',
+        },
+        {
+          'labelKey': 'allyeodoDriverGlobal',
+          'playStore': 'https://play.google.com/store/apps/details?id=com.nestplanet.allyeodo.driverglobal',
+          'appStore': '',
+        },
+      ],
+    },
+    {
       'titleKey': 'pickleTitle',
       'descriptionKey': 'pickleDesc',
       'tech': ['Flutter', 'Riverpod', 'Supabase', 'OpenAI', 'Google Vision', 'FCM'],
@@ -45,26 +70,6 @@ class ProjectsSection extends StatelessWidget {
       'image': 'assets/images/offpeak.png',
       'github': 'https://github.com/hillview0303/offpeak',
       'demo': 'https://www.youtube.com/watch?v=uERXHpv1kT8',
-      'playStore': '',
-      'appStore': '',
-    },
-    {
-      'titleKey': 'shelfTitle',
-      'descriptionKey': 'shelfDesc',
-      'tech': ['Flutter', 'Riverpod', 'REST API'],
-      'image': 'assets/images/shelf.png',
-      'github': 'https://github.com/hillview0303/shelf-flutter-project',
-      'demo': 'https://www.youtube.com/watch?v=jXa_rS_uIPI',
-      'playStore': '',
-      'appStore': '',
-    },
-    {
-      'titleKey': 'bodykeyTitle',
-      'descriptionKey': 'bodykeyDesc',
-      'tech': ['Flutter', 'Riverpod', 'REST API', 'Pedometer'],
-      'image': 'assets/images/bodykey.png',
-      'github': 'https://github.com/hillview0303/project-final-flutter',
-      'demo': 'https://www.youtube.com/watch?v=ngoAZXk4fdQ',
       'playStore': '',
       'appStore': '',
     },

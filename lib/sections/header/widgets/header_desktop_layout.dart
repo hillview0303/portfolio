@@ -7,10 +7,12 @@ import '../../../constants/app_texts.dart';
 
 class HeaderDesktopLayout extends StatelessWidget {
   final String lang;
+  final VoidCallback? onStatsTap;
 
   const HeaderDesktopLayout({
     super.key,
     required this.lang,
+    this.onStatsTap,
   });
 
   @override
@@ -100,49 +102,25 @@ class HeaderDesktopLayout extends StatelessWidget {
             flex: 1,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _buildStatCard(
-                  number: AppTexts.get('statsProjects', lang),
-                  label: AppTexts.get('statsProjectsLabel', lang),
+                Flexible(
+                  child: _StatCard(
+                    number: AppTexts.get('statsProjects', lang),
+                    label: AppTexts.get('statsProjectsLabel', lang),
+                    onTap: onStatsTap,
+                  ),
                 ),
-                _buildStatCard(
-                  number: AppTexts.get('statsYears', lang),
-                  label: AppTexts.get('statsYearsLabel', lang),
+                SizedBox(width: AppSizes.spacing8),
+                Flexible(
+                  child: _StatCard(
+                    number: AppTexts.get('statsLiveApps', lang),
+                    label: AppTexts.get('statsLiveAppsLabel', lang),
+                    onTap: onStatsTap,
+                  ),
                 ),
               ],
             ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildStatCard({
-    required String number,
-    required String label,
-  }) {
-    return Container(
-      width: 110,
-      padding: EdgeInsets.all(AppSizes.spacing24),
-      child: Column(
-        children: [
-          Text(
-            number,
-            style: TextStyle(
-              fontSize: 40,
-              fontWeight: FontWeight.w900,
-              color: AppColors.primary,
-              height: 1.0,
-            ),
-          ),
-          SizedBox(height: AppSizes.spacing8),
-          Text(
-            label,
-            style: AppTextStyles.body2(null).copyWith(
-              fontWeight: FontWeight.w600,
-              color: AppColors.textPrimary,
-            ),
-            textAlign: TextAlign.center,
           ),
         ],
       ),
@@ -179,6 +157,82 @@ class HeaderDesktopLayout extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+// 탭하면 onTap 실행, 웹에서 hover 시 테두리·배경이 살짝 밝아짐
+class _StatCard extends StatefulWidget {
+  final String number;
+  final String label;
+  final VoidCallback? onTap;
+
+  const _StatCard({
+    required this.number,
+    required this.label,
+    this.onTap,
+  });
+
+  @override
+  State<_StatCard> createState() => _StatCardState();
+}
+
+class _StatCardState extends State<_StatCard> {
+  bool _hovered = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return MouseRegion(
+      cursor: widget.onTap != null
+          ? SystemMouseCursors.click
+          : MouseCursor.defer,
+      onEnter: (_) => setState(() => _hovered = true),
+      onExit: (_) => setState(() => _hovered = false),
+      child: GestureDetector(
+        onTap: widget.onTap,
+        child: AnimatedContainer(
+          duration: Duration(milliseconds: 200),
+          constraints: BoxConstraints(minWidth: 110),
+          padding: EdgeInsets.symmetric(
+            horizontal: AppSizes.spacing16,
+            vertical: AppSizes.spacing24,
+          ),
+          decoration: BoxDecoration(
+            color: _hovered
+                ? AppColors.primary.withValues(alpha: 0.06)
+                : Colors.transparent,
+            border: Border.all(
+              color: _hovered
+                  ? AppColors.primary.withValues(alpha: 0.5)
+                  : Colors.transparent,
+            ),
+            borderRadius: BorderRadius.circular(AppSizes.radiusL),
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                widget.number,
+                style: TextStyle(
+                  fontSize: 40,
+                  fontWeight: FontWeight.w900,
+                  color: AppColors.primary,
+                  height: 1.0,
+                ),
+              ),
+              SizedBox(height: AppSizes.spacing8),
+              Text(
+                widget.label,
+                style: AppTextStyles.body2(null).copyWith(
+                  fontWeight: FontWeight.w600,
+                  color: AppColors.textPrimary,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

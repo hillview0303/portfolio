@@ -135,7 +135,10 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 children: [
                   _buildSectionWithBackground(
-                    HeaderSection(key: _headerKey),
+                    HeaderSection(
+                      key: _headerKey,
+                      onStatsTap: () => _scrollToSection('projects'),
+                    ),
                     AppColors.background,
                   ),
                   _buildSectionWithBackground(

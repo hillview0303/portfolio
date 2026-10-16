@@ -7,7 +7,9 @@ import 'widgets/header_mobile_layout.dart';
 import 'widgets/header_desktop_layout.dart';
 
 class HeaderSection extends StatelessWidget {
-  const HeaderSection({super.key});
+  final VoidCallback? onStatsTap;
+
+  const HeaderSection({super.key, this.onStatsTap});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +31,7 @@ class HeaderSection extends StatelessWidget {
           ),
           child: isMobile
               ? HeaderMobileLayout(lang: lang)
-              : HeaderDesktopLayout(lang: lang),
+              : HeaderDesktopLayout(lang: lang, onStatsTap: onStatsTap),
         ),
       ],
     );

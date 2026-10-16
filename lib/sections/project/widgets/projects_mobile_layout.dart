@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 import '../../../constants/app_sizes.dart';
 import '../../../constants/app_colors.dart';
 import '../../../constants/app_text_styles.dart';
 import '../../../constants/app_texts.dart';
+import 'project_buttons.dart';
 
 class ProjectsMobileLayout extends StatelessWidget {
   final String lang;
@@ -42,54 +42,7 @@ class ProjectsMobileLayout extends StatelessWidget {
     );
   }
 
-  Future<void> _launch(String url) async {
-    final uri = Uri.parse(url);
-    if (await canLaunchUrl(uri)) {
-      await launchUrl(uri);
-    }
-  }
-
   Widget _buildProjectCard(Map<String, dynamic> project) {
-    final String github = project['github'] as String? ?? '';
-    final String demo = project['demo'] as String? ?? '';
-    final String playStore = project['playStore'] as String? ?? '';
-    final String appStore = project['appStore'] as String? ?? '';
-
-    // 활성화된 버튼만 리스트로 모음
-    final List<Widget> buttons = [];
-    if (github.isNotEmpty) {
-      buttons.add(_buildButton(
-        url: github,
-        icon: Icons.code,
-        labelKey: 'viewCode',
-        backgroundColor: AppColors.textPrimary,
-      ));
-    }
-    if (demo.isNotEmpty) {
-      buttons.add(_buildButton(
-        url: demo,
-        icon: Icons.launch,
-        labelKey: 'viewDemo',
-        backgroundColor: AppColors.primary,
-      ));
-    }
-    if (appStore.isNotEmpty) {
-      buttons.add(_buildButton(
-        url: appStore,
-        icon: Icons.apple,
-        labelKey: 'appStore',
-        backgroundColor: AppColors.textPrimary,
-      ));
-    }
-    if (playStore.isNotEmpty) {
-      buttons.add(_buildButton(
-        url: playStore,
-        icon: Icons.play_arrow_rounded,
-        labelKey: 'playStore',
-        backgroundColor: AppColors.primary,
-      ));
-    }
-
     return Container(
       decoration: BoxDecoration(
         color: AppColors.backgroundWhite,
@@ -164,49 +117,11 @@ class ProjectsMobileLayout extends StatelessWidget {
                   ))
                       .toList(),
                 ),
-                if (buttons.isNotEmpty) ...[
-                  SizedBox(height: AppSizes.spacing16),
-                  Row(
-                    children: _buildButtonRow(buttons),
-                  ),
-                ],
+                ProjectButtons(project: project, lang: lang),
               ],
             ),
           ),
         ],
-      ),
-    );
-  }
-
-  // 버튼들을 균등 분할 + 사이 간격 추가
-  List<Widget> _buildButtonRow(List<Widget> buttons) {
-    final List<Widget> result = [];
-    for (int i = 0; i < buttons.length; i++) {
-      result.add(Expanded(child: buttons[i]));
-      if (i < buttons.length - 1) {
-        result.add(SizedBox(width: AppSizes.spacing8));
-      }
-    }
-    return result;
-  }
-
-  // 공통 버튼 위젯 (아이콘 + 라벨 + 색상만 다름)
-  Widget _buildButton({
-    required String url,
-    required IconData icon,
-    required String labelKey,
-    required Color backgroundColor,
-  }) {
-    return ElevatedButton.icon(
-      onPressed: () => _launch(url),
-      icon: Icon(icon, size: AppSizes.iconS),
-      label: Text(AppTexts.get(labelKey, lang)),
-      style: ElevatedButton.styleFrom(
-        backgroundColor: backgroundColor,
-        foregroundColor: AppColors.background,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(AppSizes.buttonRadius),
-        ),
       ),
     );
   }
